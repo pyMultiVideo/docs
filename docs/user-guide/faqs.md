@@ -1,12 +1,16 @@
-#
+## Will this application drop frames?
 
-Other applications have a problem where the spinnaker cameras can drop frames due to the framer buffer full before they are taken from the camera and saved to disk. 
+This will depend on the implementation of the camera api used.
+
+This 0.1 release of the application ships with support FLIR cameras, where other video acquisiton pipelines can drop frames if the FLIR camera is not used properly. 
+This happens because the spinnaker camera's internal buffer can fill up and cause the 
 
 pyMultiVideo's interface with the spinnaker camera has functionality to avoid this problem. 
 
 This is done in two ways: 
 
-1. The camera's internal buffer handleing mode is set to overwrite the oldest image first if the buffer is full. This means that if the buffer is starting to fill up, the camera will not overwrite images that have yet to be moved over the camera and into the host machine. (See [here](https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/understanding-buffer-handling/) for further information from the manufacture.)
+### Internal Buffer Handling
+- The camera's internal buffer handleing mode is set to overwrite the oldest image first if the buffer is full. This means that if the buffer is starting to fill up, the camera will not overwrite images that have yet to be moved over the camera and into the host machine. (See [here](https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/understanding-buffer-handling/) for further information from the manufacture.)
 
 ```
 def set_buffer_handling_mode(self, mode: str = "OldestFirst") -> None:
@@ -59,6 +63,8 @@ def set_buffer_handling_mode(self, mode: str = "OldestFirst") -> None:
 
 
 ```
+
+### Frequency of buffer emptying
 
 2. Every time the frames are set to the program to be encoded, all of the images currently in the buffer retrieved (until no more are left). This ensures that the buffer is continuously being emptied, making sure that the buffer never approaches being full. 
 This is implemented as follows. 
