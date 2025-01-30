@@ -19,9 +19,11 @@ nav:
 - User Guide:
     - Graphical user interface (GUI): user-guide/graphical-user-interface.md
     - Installation: user-guide/installation.md
-    - Camera API: user-guide/camera-api.md
+    - Updates: user-guide/updates.md
     - Troubleshooting: user-guide/troubleshooting.md
     - Frequently Asked Questions: user-guide/faqs.md
+    - Camera API: user-guide/camera-api.md
+    
 
 - About:
     - Release Notes: about/release-notes.md
@@ -31,4 +33,4 @@ nav:
     - Help and Discussions: https://github.com/orgs/pyMultiVideo/discussions
     - GitHub repositories: https://github.com/pyMultiVideo
 
-copyright: Copyright &copy; 2018-2024 <a href="/release-notes/">Thomas Akam</a>.
+copyright: # Copyright &copy; 2018-2024 <a href="/release-notes/">Thomas Akam</a>.

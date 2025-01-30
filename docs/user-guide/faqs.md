@@ -1,4 +1,5 @@
-## Will this application drop frames?
+
+### Will this application drop frames?
 
 This will depend on the implementation of the camera api used.
 
@@ -9,62 +10,45 @@ pyMultiVideo's interface with the spinnaker camera has functionality to avoid th
 
 This is done in two ways: 
 
-### Internal Buffer Handling
+#### Internal Buffer Handling
 - The camera's internal buffer handleing mode is set to overwrite the oldest image first if the buffer is full. This means that if the buffer is starting to fill up, the camera will not overwrite images that have yet to be moved over the camera and into the host machine. (See [here](https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/understanding-buffer-handling/) for further information from the manufacture.)
 
 ```
-def set_buffer_handling_mode(self, mode: str = "OldestFirst") -> None:
-        """
-        Sets the buffer handling mode.
+if mode not in ["OldestFirst"]:
+    # Raise a warning if the mode is not set to 'OldestFirst'
+    self.logger.warning(f"Buffer handling mode '{mode}' is not 'OldestFirst'.")
 
-        By default, the buffer handling mode is set to 'OldestFirst'. This means that the oldest image in the buffer is the first to be retrieved.
+try:
+    # Access the Transport Layer Stream (TLStream) node map
+    stream_nodemap = self.cam.GetTLStreamNodeMap()
 
-        Alternative modes are:
-        - NewestFirst
-        - NewestOnly
-        - OldestFirstOverwrite
+    # Set buffer handling mode
+    node_buffer_handling_mode = PySpin.CEnumerationPtr(
+        stream_nodemap.GetNode("StreamBufferHandlingMode")
+    )
 
-        See: https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/accessing-the-on-camera-frame-buffer/
-
-        For this implementation, use of oldest first is important as the camera releases the images in the order they are collected.
-        If the buffer is not emptied in this order then the images will be encoded in the wrong order which is bad
-
-        """
-        if mode not in ["OldestFirst"]:
-            # Raise a warning if the mode is not set to 'OldestFirst'
-            self.logger.warning(f"Buffer handling mode '{mode}' is not 'OldestFirst'.")
-
-        try:
-            # Access the Transport Layer Stream (TLStream) node map
-            stream_nodemap = self.cam.GetTLStreamNodeMap()
-
-            # Set buffer handling mode
-            node_buffer_handling_mode = PySpin.CEnumerationPtr(
-                stream_nodemap.GetNode("StreamBufferHandlingMode")
+    # Check if the node exists and is writable
+    if PySpin.IsAvailable(node_buffer_handling_mode) and PySpin.IsWritable(
+        node_buffer_handling_mode
+    ):
+        node_mode_value = node_buffer_handling_mode.GetEntryByName(
+            mode
+        )  # Change to desired mode
+        if PySpin.IsAvailable(node_mode_value) and PySpin.IsReadable(
+            node_mode_value
+        ):
+            node_buffer_handling_mode.SetIntValue(node_mode_value.GetValue())
+            print(
+                f"Buffer Handling Mode set to: {node_mode_value.GetSymbolic()}"
             )
 
-            # Check if the node exists and is writable
-            if PySpin.IsAvailable(node_buffer_handling_mode) and PySpin.IsWritable(
-                node_buffer_handling_mode
-            ):
-                node_mode_value = node_buffer_handling_mode.GetEntryByName(
-                    mode
-                )  # Change to desired mode
-                if PySpin.IsAvailable(node_mode_value) and PySpin.IsReadable(
-                    node_mode_value
-                ):
-                    node_buffer_handling_mode.SetIntValue(node_mode_value.GetValue())
-                    print(
-                        f"Buffer Handling Mode set to: {node_mode_value.GetSymbolic()}"
-                    )
-
-        except PySpin.SpinnakerException as ex:
-            print(f"Error setting buffer handling mode: {ex}")
+except PySpin.SpinnakerException as ex:
+    print(f"Error setting buffer handling mode: {ex}")
 
 
 ```
 
-### Frequency of buffer emptying
+#### Frequency of buffer emptying
 
 2. Every time the frames are set to the program to be encoded, all of the images currently in the buffer retrieved (until no more are left). This ensures that the buffer is continuously being emptied, making sure that the buffer never approaches being full. 
 This is implemented as follows. 
@@ -99,3 +83,9 @@ finally:
         "timestamps": self.timestamps_buffer,
     }
 ```
+
+### Will there be support for my camera? 
+
+At the moment there is only support for FLIR cameras using the PySpin API that written for python. There is a partially tested USB camera for webcams, that is slightly buggy.
+
+If you would like to implement your own camera you can! Click here for more information
