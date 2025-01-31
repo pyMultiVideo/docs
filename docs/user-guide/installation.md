@@ -57,3 +57,8 @@ This SDK is installed on the computer and the spinnaker python api is also downl
 ### INSTALL_FFMPEG
 
 The encoder in this application uses ffmpeg so you need ffmpeg installed (by simply running [this](https://github.com/pyMultiVideo/code/tree/main/_installation/CHECK_FFMPEG_INSTALLATION.ps1) script.) as well as the ffmpeg api ([`pip install ffmpeg-python`](https://pypi.org/project/ffmpeg-python/))
+
+
+## Opening the application
+
+To open the application you must run the `pyMultiVideo_GUI.pyw` in the conda environment created (`pyMultiCam_env`). You can do this by either by running `conda activate pyMultiCam_env`, the using this version of python to open the GUI file, or you can run the [OPEN_APPLICATION.ps1](https://github.com/pyMultiVideo/code/blob/main/OPEN_APPLICATION.ps1) script which will do this automatically.
