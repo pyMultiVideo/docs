@@ -1,14 +1,14 @@
-## Getting started 
+## Introducing pyMultiVideo 
 
 >**Open source, Python based, Multiple video acquisition.**
 
 *Key Features*
 
-- `pyMultiVideo` is an application for Aquiring images from Mulitple Cameras simulaneously. This is primarily a scientific application.
-- This is a `python 3.10` implementation this with GUI written using the [QT framework](https://www.qt.io/product/framework) and has a in built GUI to see the images you are aquring, whilst aqurining them
+- `pyMultiVideo` is an application for aquiring images from mulitple cameras simulaneously. This is primarily a scientific application.
+- This is a `python 3.10` implementation with GUI written using the [QT framework](https://www.qt.io/product/framework) and has a built-in GUI to see the videos you are aquiring real-time.
 - Use of the spinnaker-python API is a key feature of this application. 
 
-## Overview
+### Recommended Usage
 
 pyMultiVideo's usage / recommended usage
 
@@ -29,13 +29,17 @@ See [here](/user-guide/installation.md) for instructions on how to install this 
 
 pyMultiVideo has the following dependencies
 
-- Python 3.10
+- python 3.10
 - numpy < 2
 - PyQt6
 - pyqtgraph
+- cv2
+- cv2-enumerate-cameras
 
-pyMultiVideo has only been tested on Windows 11. In principle, it could run cross platform, however this would depend on 
+pyMultiVideo has only been tested on Windows 11. In principle, it could run cross platform, however the installation scripts are written only for Windows.
 
 ### Installation 
+
+Administrative access is required to install this application on your machine. This is because the python environment is installed in `C:\Program Files`.
 
 Installation scripts have been developed to install for all users (`C:\Program Files`) only (i.e. installation as an administrator for the computer you intend to install it on). 

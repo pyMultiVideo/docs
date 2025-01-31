@@ -1,37 +1,41 @@
 # How to install pyMultiVideo
 
+There are two main steps to installing pyMutliVideo
+
+1. Cloning the repository
+2. Running the powershell installation scripts
+
 ## Cloning the repository
 
 The recommended way to install this program is to clone this repository using github. If you intend on installing it for all users consider installing it in `C:/Program Files`.
 
-To install using github: 
+To install using Github: 
 
-1. Install git bash if you havent already. 
+1. Install Git Bash if you havent already. 
 2. Open the Git Bash powershell
-3. Navigate to the folder you would like to install the repository in (using the e.g. `cd C:/Program Files/`)
-4. clone the repository `git clone https://github.com/pyMultiVideo/code.git`
+3. Navigate to the folder you would like to install the repository in (e.g. `cd C:/Program Files/`)
+4. Clone the repository `git clone https://github.com/pyMultiVideo/code.git`
 
-After this has been done, to update the repositiory: 
+This allows for an easier [updating](/docs/user-guide/updates.md) process
 
-1. Navigate to the folder you installed pyMultiVideo `cd path/to/code/`
-2. Pull changes from the repository `git pull`
+## powershell files for installation of the application dependancies
 
-## Batch file for installation of the application dependancies
+To install this application you can run these powershell installation scripts in the following order.
 
-To install this application you can run these powershell installation scripts.
+>IMPORTANT: For the installtion to work properly, you must run the installation scripts in the directory that they located (i.e. `/code/_installation`)
 
-  1. [INSTALL_MINICONDA_ADMIN.ps1](/_installation/INSTALL_MINICONDA_ADMIN.ps1)
-  2. [INSTALL_PYSPIN.ps1](/_installation/INSTALL_PYSPIN.ps1).  
-  3. [INSTALL_FFMPEG.ps1](/_installation/INSTALL_FFMPEG.ps1)
+  1. [INSTALL_MINICONDA_ADMIN.ps1](https://github.com/pyMultiVideo/code/tree/main/_installation/INSTALL_MINICONDA_ADMIN.ps1)
+  2. [INSTALL_PYSPIN.ps1](https://github.com/pyMultiVideo/code/tree/main/_installation/INSTALL_PYSPIN.ps1).  
+  3. [INSTALL_FFMPEG.ps1](https://github.com/pyMultiVideo/code/tree/main/_installation/INSTALL_FFMPEG.ps1)
 
-IMPORTANT: For the installtion to work properly, you must run the installation scripts in the directory that they are being saved in. 
 
 You can check the requirements of the installation were met with the following scripts
 
-  1. [CHECK_SPINNAKER_INSTALLATION.ps1](/_installation/CHECK_SPINNAKER_INSTALLATION.ps1)
-  2. [CHECK_FFMPEG_INSTALLATION.ps1](/_installation/CHECK_FFMPEG_INSTALLATION.ps1)
+  1. [CHECK_SPINNAKER_INSTALLATION.ps1](https://github.com/pyMultiVideo/code/tree/main/_installation/CHECK_SPINNAKER_INSTALLATION.ps1)
+  2. [CHECK_FFMPEG_INSTALLATION.ps1](https://github.com/pyMultiVideo/code/tree/main/_installation/CHECK_FFMPEG_INSTALLATION.ps1)
 
 ## What the scripts do
+*Windows only*
 
 ### INSTALL_MINICONDA.ps1
 
@@ -45,24 +49,11 @@ The script also creates a python 3.10 virtual environment in miniconda and insta
 
 ### INSTALL_PYSPIN.ps1
 
-Get the Spinnaker SDK from their [website](https://www.teledynevisionsolutions.com/products/spinnaker-sdk/?model=Spinnaker%20SDK&vertical=machine%20vision&segment=iis).
+This get the Spinnaker SDK from their [website](https://www.teledynevisionsolutions.com/products/spinnaker-sdk/?model=Spinnaker%20SDK&vertical=machine%20vision&segment=iis), however the script provides a direct download link to the SDK.
 *It has only be tested using python 3.10*
 
 This SDK is installed on the computer and the spinnaker python api is also downloaded, and installed into the miniconda virtual environment. 
 
 ### INSTALL_FFMPEG
 
-The encoder in this application uses ffmpeg so you need ffmpeg installed (by simply running [this](/_installation/CHECK_FFMPEG_INSTALLATION.ps1) script.) as well as the ffmpeg api ([`pip install ffmpeg-python`](https://pypi.org/project/ffmpeg-python/))
-
-### Supporting USB cameras
-
-To support USB cameras :
-
-- `cv2_enumerate_cameras` library is used for listing the USB cameras that are connected to the computer
-- `opencv-python` library is used to get the images from the USB camera
-
-### Other dependancies
-
-- `PyQt6` (Main GUI)
-- `pyqtgraph` (for displaying images to GUI)
-
+The encoder in this application uses ffmpeg so you need ffmpeg installed (by simply running [this](https://github.com/pyMultiVideo/code/tree/main/_installation/CHECK_FFMPEG_INSTALLATION.ps1) script.) as well as the ffmpeg api ([`pip install ffmpeg-python`](https://pypi.org/project/ffmpeg-python/))
