@@ -19,11 +19,12 @@ nav:
 - User Guide:
     - Graphical user interface (GUI): user-guide/graphical-user-interface.md
     - Installation: user-guide/installation.md
+    - Manual Installation : user-guide/manual-installation.md
     - Updates: user-guide/updates.md
     - Troubleshooting: user-guide/troubleshooting.md
     - Frequently Asked Questions: user-guide/faqs.md
     - Camera API: user-guide/camera-api.md
-    
+- Contributing: contributing.md    
 
 - About:
     - Release Notes: about/release-notes.md

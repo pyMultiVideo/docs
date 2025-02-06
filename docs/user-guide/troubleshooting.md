@@ -5,6 +5,7 @@ When you are first running the applicaiton a firewall could warning for running 
 ![fire-wall-screen](/media/python-firewall.png)
 
 
+
 ## Can't open the GUI
 
 To open the GUI you must run the   `pyMultiVideo_GUI.pyw`. Furthermore the python files must be opened using the python virtual environment that has been setup using the installation scripts. This means activating the conda environment created using `miniconda`, then using this verison of python to run the `pyMultiVideo_GUI.pyw`.
@@ -18,6 +19,25 @@ To do this manually:
 3. Run `conda activate C:\Program Files\miniconda3\envs\pyMultiCam_env` to activate this conda environment. 
 4. Run `python path/to/code/pyMultiVideo_GUI.pyw` to open the python application. 
 
+
+### I want to double click `pyMutliVideo_GUI.pyw` and open the GUI without using terminal
+
+If you would like to open the GUI from File Explorer, then you must configure this using the 'Open with' menu in Windows 11.
+
+1. First Add the miniconda environment to the open with menu:
+
+Right click on the `pyMutliVideo_GUI.pyw` file > Select 'Open with' > Select 'Choose another app' > Scroll down and select 'Choose app on your PC' > Navigate to the `miniconda` environment (Located here: `C:\Program Files\miniconda\envs\pyMultiCam_env\pythonw.exe`)
+
+*This will add python to you 'Open with' menu when you next select the 'Open with' menu option*
+
+2. Select the Python Application as your application to open the .pyw file
+
+
+Right Click on `pyMutliVideo_GUI.pyw` > Select 'Open with' > Select 'Python'.
+
+*This should open your application in the pythonw.exe that contains the required dependencies for pyMultiVideo.pyw*
+
+NOTE: You probably only want to open this .pyw file using this python installation. Therefore, I would suggest that you click the 'Just Once' option when it appears, instead of selecting it as your default application for opening all .pyw files. 
 
 ## `conda` hasnt been added to path
 
