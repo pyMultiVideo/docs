@@ -1,8 +1,5 @@
-# Updates 
+# Updates
 
-## Keeping the application up to date. 
+To update this repository to the latest version, you can simply pull the lastest changes from the main branch of the [code](https://github.com/pyMultiVideo/code) repositiory.
 
-If you have chosen to install this application by git cloning it (the recommended way to install `pyMultiVideo`), then updating is very easy: you simply pull the changes of the repositiory to the clone of the repo that you have stored locally. See [here](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) for the github documentation of getting changes from a remore repository. 
-
-There is no need to re-install the application since, the `python` backend, `ffmpeg.exe` etc should already be installed correctly and so do not need any updating. 
-
+There is no need to re-install the application since, the `python` environment or `ffmpeg.exe` since this should already be installed correctly and so do needs no updating.

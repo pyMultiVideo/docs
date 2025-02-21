@@ -2,7 +2,6 @@
 
 ## Using the GUI
 
-
 ![Start-up GUI](/media/start-up-gui.png)
 *Example GUI on startup*
 
@@ -10,33 +9,44 @@
 
 To start recording you must enter a `Subject ID`, the click record.
 
-If all the viewfinder widgets have `Subject ID`, then buttons in the `Control All` box will be clickable. This allows you to start and stop recording all the cameras that are being used at once.
+If all the viewfinder widgets have `Subject ID`, then buttons in the *Control All* box will be clickable. This allows you to start and stop recording all the cameras that are being used at once.
 
 ### Changing the saving directory of the save data
 
-- The default save directory is `/data` folder. This is where the output from the camera is saved to disk as well as the metadata files
-- This can be changed by clicking the "File" icon and selecting the new directory
+- The default save directory is `/data` folder. This is where the video files, GPIO pin states and recording metadata are saved to disk.
+- The save location can be changed by clicking the "*File*" icon and selecting a new save directory.
 
-### Selecting a GPU for encoding
+### Encoding video
 
-- The applicaiton uses `ffmpeg` to encoder the video to disk. FFMPEG has lots of option for how to encoe the video. To use a GPU you should select 'GPU' on the `FFMPEG Settings` to encode using the graphics processing unit. 
-
-## Other features
+- The applicaiton uses `ffmpeg` to encoder the video to disk. If an NVIDIA GPU is detected by pyMultiVideo, then it will default encode the video with h265.
+- Each camera setup can configure its own downsampling factor the image send to be encoded.
+- It is also possible to configure further settings encoding speed (`fast`, `medium`, `slow`) and the bitrate quality  (between 1 - 51) in the `config/config.py` file, under the `ffmpeg_config` dictionary.
 
 ### GPIO Pin states Visualisation
 
-If the GPIO states that are being send to the camera are being detected correctly there the `GPIO States:` will become white every time the GPIO pin states get a signal.
+If the GPIO states that are being send to the camera are being detected they will display at colored dots on the viewfinder.
 
-### Full Screen Mode
+### Creating and saving GUI layouts
 
-In the Tool bar there is a `View` button which contains a toggle to remove (and re-open) the control buttons which is useful for making viewfinder from the camera as big as possible.
-
-### Opening from Config files
+If you are frequently using the GUI in a standard way, you might want to save a GUI layout. This can be done by clicking the 'Save' button. This will open a dialog where you can save the current state of the GUI to a json file. This includes the subject IDs, the cameras being displayed further to the FFMPEG encoder selected and the data directory.
 
 - Get the config file from the `/experiments` folder and use that as the input to the `--config` argument
 
+### Full Screen Mode
+
+In the Tool bar there is a *View* button which contains a toggle to remove (and re-open) the control buttons which is useful for making viewfinder from the camera as big as possible.
+
+`Ctrl+F` Toggles showing all the controls in the GUI to maximize the size of the image being displayed
+
 ## Cameras Tab
 
-- Cameras can be renamed. Other various settings for the cameras can be set here.
+![cameras-tab](\media\Setup-tab.png)
+*Example Cameras Tab with preview showing*
 
-> Note: If you change the camera settings, you need to re-initialised the camera to see changes in viewfinder's aquisition of data.
+The Cameras tab is used to name and configure setups. A camera name can determine how it appears in the drop-down menuson the Video Capture tab. If no name is specified, the camera's unique-id is used to identify a camear in the Camera Selection drop-down menu.
+
+Some camera settings can be configured in the Cameras tab. The frames per second (FPS), Exposure Time and Gain for the cameras can be configured.
+
+To see the impact of these settings on the cameras' output the "Preview" button can be clicked to preview the image at the given settings.
+
+The downsampling factor can also be configured here, if the image quality that you require is lower than that is aquired by default.

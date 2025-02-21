@@ -54,4 +54,4 @@ This should be done for all the functions that are defined in the spinnaker came
 ### Trigger Recording from Camera API
 
 - There is theoretical functionality to trigger recording the GUI by adding functionality to the functions `trigger_start_recording` and the `trigger_end_recording` functions. You might want to use the GPIO pin states to do this.
-- These functions are called every time the GUI is refreshed. If these function return `True`, then they will trigger starting and ending recording respectively. 
+- These functions are called every time the GUI is refreshed. If these function return `True`, then they will trigger starting and ending recording respectively.

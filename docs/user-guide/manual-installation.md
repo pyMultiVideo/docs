@@ -1,14 +1,19 @@
-# Manual Installation
 
 ## Installation
 
-### ffmpeg
+The installation of the application has 3 main steps:
 
-1. Download and install ffmpeg and add it to path
+- Installing FFMPEG
+- Setting up the python environment
+- Installing the Spinnaker python API into the python environment.
+
+### 1. FFMPEG
+
+1. Download and install FFPEG and add it to path
    - A script that is fairly robust is provided for [here](https://github.com/pyMultiVideo/code/blob/main/_installation/INSTALL_FFMPEG.ps1), otherwise the website to download it here `https://www.ffmpeg.org/download.html`
    - If you have troube opening this file, you can copy and paste the contents of this file into powershell directly to run it
 
-### miniconda
+### 2. Miniconda
 
 1. Download and install miniconda
       - Follow the Webstite instructions here
@@ -20,10 +25,10 @@
       - Activate this environment: `conda activate pmv`
 3. Install the required python packaged into this conda environment (distributed by pip)
       - Clone the `pyMultiVideo/code` to a known location.
-      - Locate the `requirements.txt` in the `path/to/pyMutliVideo/code/requirements.txt`
+      - Locate the `requirements.txt` in the `path/to/pyMutliVideo/code/` repository
       - Install the python packages in the `requirements.txt` using the command: `pip install -r /path/to/pyMultiVideo/code/requirements.txt`
 
-### Spinnaker SDK*
+### 3. Spinnaker SDK
 
 1. Download and install the Spinnaker SDK and PySpin API
       - Log into the website `https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK`
@@ -33,11 +38,15 @@
       - This will install the drivers for the cameras
 3. Extract the .zip file for the Python Spinnaker SDK to a known location.
 4. Install the PySpin (not distributed by pip)
-       - In the spinnaker SDK, you will see file called `.whl`
+       - In the spinnaker SDK, you will see file with the extention `.whl`
        - Copy the path to the `.whl` file
+       - Ensure that the conda environment `pmv` has been activated using the `conda activate pmv` command.
        - Install it in the miniconda environment created above: e.g. `pip install "path/to/sdk/spinnaker_python-4.0.0.116-cp310-cp310-win_amd64.whl"`
+
+The installation in complete!
 
 ## Lanch Application
 
 - Activate the conda environment e.g. `conda activate pmv`
 - Launch the python application from the active python environment: `python path/to/pyMultiVideo_GUI.pyw`
+- To launch from the file explorer double click the `LAUNCH_GUI.bat` which runs the commands described above. A shortcut to this file can be made to launch this application from elsewhere.
