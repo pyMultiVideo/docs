@@ -1,5 +1,16 @@
 
-## Installation
+# Installation
+
+The installation of this application requires downloading the python source code from pyMultiVideo/code and setting up the python virtual environment in which to run the application.
+
+## Downloading the source code
+
+- If you are using the *git bash* terminal, simply navigate to the folder you would like to code to be stored in (`cd path/to/code`)
+- Clone the repositiory to the desired location: `git clone https://github.com/pyMultiVideo/code.git`
+
+For further information on cloning github repositiory please see [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) for official documentation.
+
+## Creating the python environment
 
 The installation of the application has 3 main steps:
 
@@ -10,20 +21,20 @@ The installation of the application has 3 main steps:
 ### 1. FFMPEG
 
 1. Download and install FFPEG and add it to path
-   - A script that is fairly robust is provided for [here](https://github.com/pyMultiVideo/code/blob/main/_installation/INSTALL_FFMPEG.ps1), otherwise the website to download it here `https://www.ffmpeg.org/download.html`
+   - A script that is fairly robust is provided for [here](), otherwise the website to download it here `https://www.ffmpeg.org/download.html`
    - If you have troube opening this file, you can copy and paste the contents of this file into powershell directly to run it
 
 ### 2. Miniconda
 
 1. Download and install miniconda
-      - Follow the Webstite instructions here
+      - Follow the Webstite instructions
       - `https://docs.anaconda.com/miniconda/`
 
 2. Create a conda environment in which to install the application
       - If this is the first time you are installing this application, you might need to run `conda init` and then restart the powershell instance.
       - Run `conda create -n pmv python=3.10` to create a python environment with python 3.10 installed
       - Activate this environment: `conda activate pmv`
-3. Install the required python packaged into this conda environment (distributed by pip)
+3. Install the required python packaged into this conda environment (distributed by pip) using the requirements.txt
       - Clone the `pyMultiVideo/code` to a known location.
       - Locate the `requirements.txt` in the `path/to/pyMutliVideo/code/` repository
       - Install the python packages in the `requirements.txt` using the command: `pip install -r /path/to/pyMultiVideo/code/requirements.txt`

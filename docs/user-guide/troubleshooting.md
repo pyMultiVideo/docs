@@ -16,7 +16,7 @@ In the `code/` directory, there is a file called `LAUNCH_GUI.bat` that contains 
 
 ## `conda` hasnt been added to path
 
-![Not added to path](/media/conda-not-added-to-path.png)
+![Not added to path](/docs/media/conda-not-added-to-path.png)
 
 For the powershell script to work, it must know the conda command. The powershell requires that you add the installation location of miniconda to the environment variables for the machine.
 
