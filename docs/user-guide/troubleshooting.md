@@ -26,7 +26,7 @@ In the `code/` directory, there is a file called `LAUNCH_GUI.bat` that contains 
 
 ## `conda` hasnt been added to path
 
-![Not added to path](/docs/media/conda-not-added-to-path.png)
+![Not added to path](../media/conda-not-added-to-path.png)
 
 For the powershell script to work, it must know the conda command. The powershell requires that you add the installation location of miniconda to the environment variables for the machine.
 
@@ -61,7 +61,7 @@ libpostproc    58.  3.100 / 58.  3.100
 - When installing the software you may see a error that asks you to `Run 'conda init' before 'conda activate'` This usually happens on first installation of miniconda.
 - It requires you to run `conda init`, then restart the powershell instance. You can check if `conda activate` works by running this command before running the installation script again. There shuld be no red error message if `conda activate` has run correctly.
 
-![Not initalised](/docs/media/conda-not-initialised.png)
+![Not initalised](../media/conda-not-initialised.png)
 
 ## Spinnaker Cameras have not shown up in the GUI
 
@@ -70,11 +70,11 @@ This likely due to the Spinnaker drivers not being installed correctly.
 In this case, you should check that the drivers are working in `Spinview`, spinnaker's own recording application, which has more explicit error message for drivers.
 
 If you see something like the following image, then you might have a problem with your drivers. I am not 100% sure why this occurs, however reinstalling the spinnaker drivers from their website might be able to fix it.
-![bad drivers](/docs/media/driver-problem.png)
+![bad drivers](../media/driver-problem.png)
 
 Note: that you camera should likely appear like the following image the device manager, and not as a USB camera for correct installation:
 
-![device-managed-view](/docs/media/flir-camera-drivers-view.png)
+![device-managed-view](../media/flir-camera-drivers-view.png)
 
 ## Flickering of the viewfinder
 
@@ -84,4 +84,8 @@ The update rate of the GUI is different to the update rate. This could also be f
 
 When you are first running the applicaiton a firewall could warning for running the python executable.
 
-![fire-wall-screen](/docs/media/python-firewall.png)
+![fire-wall-screen](../media/python-firewall.png)
+
+## I can't run shell scripts on my computer
+
+In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, especially if you i
