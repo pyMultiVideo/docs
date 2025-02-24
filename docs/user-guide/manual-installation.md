@@ -21,13 +21,13 @@ The installation of the application has 3 main steps:
 ### 1. FFMPEG
 
 1. Download and install FFPEG and add it to path
-   - A script that is fairly robust is provided for [here](), otherwise the website to download it here `https://www.ffmpeg.org/download.html`
+   - A script that is fairly robust is provided for [here](https://gist.github.com/AnjanaMadu/5f9689e9572492a50089f4a74b9b8de5), otherwise the website to download it here `https://www.ffmpeg.org/download.html`
    - If you have troube opening this file, you can copy and paste the contents of this file into powershell directly to run it
 
 ### 2. Miniconda
 
 1. Download and install miniconda
-      - Follow the Webstite instructions
+      - Follow the Webstite instructions here (direct download link [here](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe))
       - `https://docs.anaconda.com/miniconda/`
 
 2. Create a conda environment in which to install the application
@@ -43,8 +43,8 @@ The installation of the application has 3 main steps:
 
 1. Download and install the Spinnaker SDK and PySpin API
       - Log into the website `https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK`
-      - Download the latest Spinnaker SDK available e.g. 'Spinnaker FUll SDK 4.0.0.116'
-      - Download the latest Python SDK available e.g. 'Windows Python Spinnaker SDK 4.0.0.116'
+      - Download the latest Spinnaker SDK available e.g. [Spinnaker FUll SDK 4.0.0.116](https://flir.netx.net/file/asset/59416/original/attachment)
+      - Download the latest Python SDK available e.g. [Windows Python Spinnaker SDK 4.0.0.116](https://flir.netx.net/file/asset/59416/original/attachment)
 2. Extract the .zip file and install full windows installer.
       - This will install the drivers for the cameras
 3. Extract the .zip file for the Python Spinnaker SDK to a known location.
