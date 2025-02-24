@@ -2,7 +2,7 @@
 
 ## Using the GUI
 
-![Start-up GUI](/media/start-up-gui.png)
+![Start-up GUI](/docs/media/start-up-gui.png)
 *Example GUI on startup*
 
 ### Start recording
@@ -40,7 +40,7 @@ In the Tool bar there is a *View* button which contains a toggle to remove (and 
 
 ## Cameras Tab
 
-![cameras-tab](\media\Setup-tab.png)
+![cameras-tab](/docs/media/Setup-tab.png)
 *Example Cameras Tab with preview showing*
 
 The Cameras tab is used to name and configure setups. A camera name can determine how it appears in the drop-down menuson the Video Capture tab. If no name is specified, the camera's unique-id is used to identify a camear in the Camera Selection drop-down menu.

@@ -1,10 +1,9 @@
 
-### Will this application drop frames?
+## Will this application drop frames?
 
 This will depend on the implementation of the camera api used.
 
-This 0.1 release of the application ships with support FLIR cameras, where other video acquisiton pipelines can drop frames if the FLIR camera is not used properly.
-This happens because the spinnaker camera's internal buffer can fill up and cause the
+This current release of the application has support FLIR cameras using the spinnaker-python API. Other video acqusition piplines could drop frames. 
 
 pyMultiVideo's interface with the spinnaker camera has functionality to avoid this problem.
 

@@ -5,12 +5,12 @@
 *Key Features*
 
 - `pyMultiVideo` is an application for aquiring images from mulitple cameras simulaneously. This is primarily a scientific application.
-- This is a `python 3.10` implementation with GUI written using the [QT framework](https://www.qt.io/product/framework) and has a built-in GUI to see the videos you are aquiring real-time.
-- Use of the `spinnaker-python` API is a key feature of this application.
+- This is a `python 3.10` implementation with GUI written using the [QT framework](https://www.qt.io/product/framework) to see the videos you are aquiring real-time.
+- Teledyne's Spinnaker API integration is a key feature of this application.
 
 ### Recommended Usage
 
-Video aqusition with simulateous recording from different cameras
+Synchronised video capture from multiple cameras.
 
 ### Currently Supported Cameras
 
@@ -19,6 +19,7 @@ PySpin Spinnaker Camera
 Tested on:
 
 - `Pointgrey Chameleon3`
+- `BlackFlyS`
 
 ## Getting started
 
