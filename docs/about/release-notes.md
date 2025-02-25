@@ -15,10 +15,10 @@ Key features:
 
 GUI:
 
-* Mutliple Video acqusition by instantiating multiple camera API objects at once.
+* Mutliple video acquisition by instantiating multiple camera API objects at once.
   * GUI to display the video streaming from all cameras being used at once.
-  * Experiment configuration save-able and load-able
-  * Easy naming of video files collected from the data.
+  * GUI layout can be saved to *.json* files and loaded. 
+  * Video files can be named easily. 
 
 Video Acquisition:
 

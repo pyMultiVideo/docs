@@ -2,6 +2,9 @@
 
 >**Open source, Python based, Multiple video acquisition.**
 
+![example](./media/multi-screen-layout.jpeg)
+*pyMultiVideo displaying and recording video from multiple cameras at once*
+
 *Key Features*
 
 - `pyMultiVideo` is an application for aquiring images from mulitple cameras simulaneously. This is primarily a scientific application.

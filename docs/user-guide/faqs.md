@@ -1,7 +1,7 @@
 
 ## Will this application drop frames?
 
-This will depend on the implementation of the camera api used.
+This will depend on the implementation of the camera API used.
 
 This current release of the application has support FLIR cameras using the spinnaker-python API. Other video acqusition piplines could drop frames. 
 
@@ -11,7 +11,7 @@ This is done in two ways:
 
 #### Internal Buffer Handling
 
-- The camera's internal buffer handleing mode is set to overwrite the oldest image first if the buffer is full. This means that if the buffer is starting to fill up, the camera will not overwrite images that have yet to be moved over the camera and into the host machine. (See [here](https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/understanding-buffer-handling/) for further information from the manufacture.)
+- The camera's internal buffer handling mode is set to overwrite the oldest image first if the buffer is full. This means that if the buffer is starting to fill up, the camera will not overwrite images that have yet to be moved over the camera and into the host machine. (See [here](https://www.teledynevisionsolutions.com/en-gb/support/support-center/application-note/iis/understanding-buffer-handling/) for further information from the manufacturer.)
 
 ```python
 # Set Buffer handling mode to Oldest First
@@ -21,7 +21,7 @@ bh_node.SetIntValue(bh_node.GetEntryByName("OldestFirst").GetValue())
 
 #### Frequency of buffer emptying
 
-2. Every time the frames are set to the program to be encoded, all of the images currently in the buffer retrieved (until no more are left). This ensures that the buffer is continuously being emptied, making sure that the buffer never approaches being full.
+2. Every time the frames are sent to the program to be encoded, all of the images currently in the buffer are retrieved (until no more are left). This ensures that the buffer is continuously being emptied, making sure that the buffer never approaches being full.
 This is implemented as follows.
 
 ```python
