@@ -23,7 +23,7 @@ Tested on:
 
 ## Getting started
 
-See [here](docs/user-guide/installation.md) for instructions on how to install this application.
+See [here](./user-guide/installation.md) for instructions on how to install this application.
 
 ### Dependencies
 

@@ -37,7 +37,7 @@ If these functions are not available, the camera_api will not be able to import 
 
 ### Introduction
 
-Located in this folder are two camera classes (each in a different file (e.g. [spinnaker_camera.py](/tools/camera/spinnaker_camera.py)))
+Located in this folder are two camera classes (each in a different file (e.g. [spinnaker_camera.py](/camera_api/spinnaker_camera.py)))
 
 In this example you can see different core functions of the camera api that are defined.
 

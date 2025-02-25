@@ -88,4 +88,6 @@ When you are first running the applicaiton a firewall could warning for running 
 
 ## I can't run shell scripts on my computer
 
-In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, especially if you i
+In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, by copying the script and pasting it into the terminal window. 
+
+If you can't paste into terminal use the `Ctrl+V` then try using the `. { FILE_CONTENTS }` formatting for powershell outlines with futher detail [here](https://blog.idera.com/database-tools/pasting-multiple-lines-in-powershell) 
