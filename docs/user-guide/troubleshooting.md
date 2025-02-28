@@ -1,5 +1,5 @@
 
-## Can't open the GUI
+## GUI can't be opened
 
 To open the GUI you must run the   `pyMultiVideo_GUI.pyw`. Furthermore the python files must be opened using the python virtual environment that has been setup using the installation scripts. This means activating the conda environment created using `miniconda`, then using this verison of python to run the `pyMultiVideo_GUI.pyw`.
 
@@ -10,21 +10,21 @@ To do this manually:
 3. Run `conda activate C:\Program Files\miniconda3\envs\pyMultiCam_env` to activate this conda environment.
 4. Run `python path/to/code/pyMultiVideo_GUI.pyw` to open the python application.
 
-### My GUI is not showing up even though there is one installed on the machine. 
+### My GUI is not showing up even though there is one installed on the machine
 
 - This means that python is not able detect the nvidia card. Which is likely to due to an driver issue to do with the GPU.
 - Ensure that the GPU device is properly being detected by the windows machine by installing the correct driver.
 The following code is being used to detect the presence of a GPU. If this code is not running correctly, the GPU will not be detected.
+
 ```python
 subprocess.check_output("nvidia-smi")
 ```
 
-
 ### I want to double click `pyMutliVideo_GUI.pyw` and open the GUI without using terminal
 
-In the `code/` directory, there is a file called `LAUNCH_GUI.bat` that contains a script that can be doubled clicked and will launch a terminal application in which pyMultiVideo will launch. 
+In the `code/` directory, there is a file called `LAUNCH_GUI.bat` that contains a script that can be doubled clicked and will launch a terminal application in which pyMultiVideo will launch.
 
-## `conda` hasnt been added to path
+### `conda` hasnt been added to path
 
 ![Not added to path](../media/conda-not-added-to-path.png)
 
@@ -38,7 +38,7 @@ If you have downloaded and installed miniconda using the scripts provided in the
 
 You can check that this has been successful by navigating to the `C:\Program Files` folder. Here you should see a file called `miniconda` This means miniconda has been installed correctly.
 
-## FileNotFoundError: FFmpeg binary not found. Please install FFmpeg and ensure it's in your PATH
+### FileNotFoundError: FFMPEG binary not found. Please install FFMPEG and ensure it's in your PATH
 
 This error has occured because `ffmpeg` has not been added to your PATH (or your evironment variables). This should've been done by the ffmpeg installation script. Make sure you have done this. You can confirm this by typing `ffmpeg -version` and seeing the following as your terminal output:
 
@@ -88,6 +88,6 @@ When you are first running the applicaiton a firewall could warning for running 
 
 ## I can't run shell scripts on my computer
 
-In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, by copying the script and pasting it into the terminal window. 
+In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, by copying the script and pasting it into the terminal window.
 
-If you can't paste into terminal use the `Ctrl+V` then try using the `. { FILE_CONTENTS }` formatting for powershell outlines with futher detail [here](https://blog.idera.com/database-tools/pasting-multiple-lines-in-powershell) 
+If you can't paste into terminal use the `Ctrl+V` then try using the `. { FILE_CONTENTS }` formatting for powershell outlines with futher detail [here](https://blog.idera.com/database-tools/pasting-multiple-lines-in-powershell).

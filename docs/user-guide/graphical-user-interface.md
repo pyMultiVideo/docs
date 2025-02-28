@@ -18,13 +18,15 @@ If all the viewfinder widgets have `Subject ID`, then buttons in the *Control Al
 
 ### Encoding video
 
-- The applicaiton uses `ffmpeg` to encoder the video to disk. If an NVIDIA GPU is detected by pyMultiVideo, then it will default encode the video with h265.
-- Each camera setup can configure its own downsampling factor the image send to be encoded.
-- It is also possible to configure further settings encoding speed (`fast`, `medium`, `slow`) and the bitrate quality  (between 1 - 51) in the `config/config.py` file, under the `ffmpeg_config` dictionary.
+- The application uses `ffmpeg` to encode the video to disk. If an NVIDIA GPU is detected by pyMultiVideo, then it will default encode the video with h265.
+- Each camera setup can configure its own downsampling factor for the image to be encoded.
+- It is also possible to configure further settings such as encoding speed (`fast`, `medium`, `slow`) and the bitrate quality  (between 1 - 51) in the `config/config.py` file, under the `ffmpeg_config` dictionary.
 
 ### GPIO Pin states Visualisation
 
-If the GPIO states that are being send to the camera are being detected they will display at colored dots on the viewfinder.
+If the GPIO states that are being sent to the camera (for [example](https://pycontrol.readthedocs.io/en/latest/user-guide/synchronisation/) for synchronisation for with data streams) are being detected, they will display as colored dots on the viewfinder.
+
+
 
 ### Creating and saving GUI layouts
 
@@ -36,14 +38,15 @@ If you are frequently using the GUI in a standard way, you might want to save a 
 
 In the Tool bar there is a *View* button which contains a toggle to remove (and re-open) the control buttons which is useful for making viewfinder from the camera as big as possible.
 
-`Ctrl+F` Toggles showing all the controls in the GUI to maximize the size of the image being displayed
+!!! tip "Shortcut"
+    `Ctrl+F` Toggles: shows all the controls in the GUI to maximize the size of the image being displayed
 
 ## Cameras Tab
 
 ![cameras-tab](../media/Setup-tab.png)
 *Example Cameras Tab with preview showing*
 
-The Cameras tab is used to name and configure setups. A camera name can determine how it appears in the drop-down menuson the Video Capture tab. If no name is specified, the camera's unique-id is used to identify a camear in the Camera Selection drop-down menu.
+The Cameras tab is used to name and configure setups. A camera name can determine how it appears in the drop-down menus on the Video Capture tab. If no name is specified, the camera's unique-id is used to identify a camera in the Camera Selection drop-down menu.
 
 Some camera settings can be configured in the Cameras tab. The frames per second (FPS), Exposure Time and Gain for the cameras can be configured.
 
