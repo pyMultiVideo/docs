@@ -27,6 +27,7 @@ Video Acquisition:
 * Aquisition settings configurable: Frame rate, Gain, Exposure Time, downsampling
   * Camera settings automatically saved and used after the first start up of the application.
   * Preview of the aquisition of the camera whilst setting acquisition configuration
+* Default use of colour pixel formats is available
 
 Spinnaker:
 
