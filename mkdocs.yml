@@ -18,7 +18,7 @@ nav:
 - Home: index.md
 - User Guide:
     - Graphical user interface (GUI): user-guide/graphical-user-interface.md
-    - Installation: user-guide/manual-installation.md
+    - Installation: user-guide/installation.md
     - Updating pyMultiVideo: user-guide/updates.md
     - Troubleshooting: user-guide/troubleshooting.md
     - Frequently Asked Questions: user-guide/faqs.md
@@ -33,4 +33,4 @@ nav:
     - Help and Discussions: https://github.com/orgs/pyMultiVideo/discussions
     - GitHub repositories: https://github.com/pyMultiVideo
 
-copyright: # Copyright &copy; 2018-2024 <a href="/release-notes/">Thomas Akam</a>.
+copyright: Copyright &copy; 2024-2025 Alif Aziz & Thomas Akam.
