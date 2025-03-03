@@ -32,9 +32,10 @@ See [here](./user-guide/installation.md) for instructions on how to install this
 
 pyMultiVideo has the following dependencies
 
-- python 3.10
-- numpy < 2
+- numpy
 - PyQt6
 - pyqtgraph
+- opencv-python
+- PySpin
 
 pyMultiVideo has only been tested on Windows 11. In principle, it could run cross platform.
