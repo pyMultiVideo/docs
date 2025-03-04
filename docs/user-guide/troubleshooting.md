@@ -75,19 +75,3 @@ If you see something like the following image, then you might have a problem wit
 Note: that you camera should likely appear like the following image the device manager, and not as a USB camera for correct installation:
 
 ![device-managed-view](../media/flir-camera-drivers-view.png)
-
-## Flickering of the viewfinder
-
-The update rate of the GUI is different to the update rate. This could also be fixed by updating the drivers for the camera.
-
-## Firewall screen
-
-When you are first running the applicaiton a firewall could warning for running the python executable.
-
-![fire-wall-screen](../media/python-firewall.png)
-
-## I can't run shell scripts on my computer
-
-In Oxford University does not allow the running of shell scripts for some computers. This can be worked around, by copying the script and pasting it into the terminal window.
-
-If you can't paste into terminal use the `Ctrl+V` then try using the `. { FILE_CONTENTS }` formatting for powershell outlines with futher detail [here](https://blog.idera.com/database-tools/pasting-multiple-lines-in-powershell).

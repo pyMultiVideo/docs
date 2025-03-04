@@ -1,40 +1,26 @@
-## pyMultiVideo
+# pyMultiVideo
 
 >**Open source, Python based, Multiple video acquisition.**
 
-![example](./media/multi-screen-layout.jpeg)
-*pyMultiVideo displaying and recording video from multiple cameras at once*
+![example](./media/multi_camera_layout.png)
 
-*Key Features*
+## Overview
 
-- `pyMultiVideo` is an application for aquiring images from mulitple cameras simulaneously. This is primarily a scientific application.
-- This is a `python 3.10` implementation with GUI written using the [QT framework](https://www.qt.io/product/framework) to see the videos you are aquiring real-time.
-- Teledyne's Spinnaker API integration is a key feature of this application.
+pyMultiVideo is open source software for acquiring, visualising, compressing and synchronising video from multiple cameras; designed for scientific applications.  It currently supports only FLIR [Chameleon 3](https://www.teledynevisionsolutions.com/products/chameleon3-usb3/) and [Blackfly](https://www.teledynevisionsolutions.com/products/blackfly-s-usb3/#resources-support) cameras but has a modular separation of camera API and GUI code designed to make it straightforward to add support for other camera systems.  
 
-### Recommended Usage
+pyMultiVideo code is hosted on [Github](https://github.com/pyMultiVideo), with a [discussion board](https://github.com/orgs/pyMultiVideo/discussions) for user support.
 
-Synchronised video capture from multiple cameras.
+## Features
 
-### Currently Supported Cameras
+- Acquisition and visualisation of video and GPIO pin-state data from multiple cameras. 
 
-PySpin Spinnaker Camera
+- h264 and h265 video compression on either the CPU or NVIDA GPU.
 
-Tested on:
+- Saving of acquisition configurations and camera settings.
 
-- `Pointgrey Chameleon3`
-- `BlackFlyS`
+- Fully open source Python application.  The GUI is implemented with PyQt and PyQtGraph, video compression with ffmpeg, and FLIR camera control through the Spinnaker SDK.
 
 ## Getting started
 
-See [here](./user-guide/installation.md) for instructions on how to install this application.
+See the [installation](./user-guide/installation.md) user guide for installation instructions.
 
-### Dependencies
-
-pyMultiVideo has the following dependencies
-
-- python 3.10
-- numpy < 2
-- PyQt6
-- pyqtgraph
-
-pyMultiVideo has only been tested on Windows 11. In principle, it could run cross platform.
