@@ -23,4 +23,3 @@ pyMultiVideo code is hosted on [Github](https://github.com/pyMultiVideo), with a
 ## Getting started
 
 See the [installation](./user-guide/installation.md) user guide for installation instructions.
-
