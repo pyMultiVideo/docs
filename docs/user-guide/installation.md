@@ -57,7 +57,7 @@ For further information on cloning github repositories see the [Github documenta
 
 ### Install a camera API of your choice:
 
-Currently the Spinnaker SDK and the Ximea API are supported by the pyMultivideo:
+Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
 
 #### Install the Spinnaker SDK and PySpin python package
 
@@ -70,7 +70,7 @@ Currently the Spinnaker SDK and the Ximea API are supported by the pyMultivideo:
     2. Activate the `pmv` conda environment with the command `conda activate pmv`.
     3. Install the PySpin module from the .whl file with the command: `pip install spinnaker_python-4.2.0.83-cp310-cp310-win_amd64.whl`.
 
-#### Install the Ximea
+#### Install the Ximea python API
 
 1. Go to the [Ximea Windows Software Package](https://www.ximea.com/support/wiki/apis/XIMEA_Windows_Software_Package) page and download the Long Term Support (LTS) version of the tool. You will need to create an account on the Ximea wedsite to access the downloads.
 2. Run the executable file downloaded (`XIMEA_Windows_SP_Stable.exe`)
