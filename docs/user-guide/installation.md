@@ -55,7 +55,11 @@ For further information on cloning github repositories see the [Github documenta
     1. Change directory to the pyMultiVideo code folder that contains the file `requirements.txt` using `cd path/to/code/folder`.
     2. Install the python packages with `pip install -r requirements.txt`
 
-### Install the Spinnaker SDK and PySpin python package
+### Install a camera API of your choice:
+
+Currently the Spinnaker SDK and the Ximea API are supported by the pyMultivideo:
+
+#### Install the Spinnaker SDK and PySpin python package
 
 1. Go to the [Spinnaker SDK Download](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK) page.  You will need to create an account on the Teledyne website to access the downloads.
 2. Download the latest version of the main Spinnaker SDK for windows (e.g. `SpinnakerSDK_FULL_4.2.0.83_x64.exe`) and the Python 3.10 bindings (e.g. `spinnaker_python-4.2.0.83-cp310-cp310-win_amd64.zip`)
@@ -66,12 +70,28 @@ For further information on cloning github repositories see the [Github documenta
     2. Activate the `pmv` conda environment with the command `conda activate pmv`.
     3. Install the PySpin module from the .whl file with the command: `pip install spinnaker_python-4.2.0.83-cp310-cp310-win_amd64.whl`.
 
-## Launch Application 
+#### Install the Ximea
+
+1. Go to the [Ximea Windows Software Package](https://www.ximea.com/support/wiki/apis/XIMEA_Windows_Software_Package) page and download the Long Term Support (LTS) version of the tool. You will need to create an account on the Ximea wedsite to access the downloads.
+2. Run the executable file downloaded (`XIMEA_Windows_SP_Stable.exe`)
+3. Nagivate to the location of the installation folder (e.g. `C:\XIMEA`), then locate the API (`C:\XIMEA\API\Python\v3\ximea`) This is the folder that contains the python library you will install.
+
+4. Locate the site-packages folder for the miniconda environment by doing the following:
+   1. Activate the conda environment `conda activate pmv`,
+   2.  Run `conda info`, then locate the `active env location`. This will look like `C:\miniconda3\envs\pmv` if this is installed for all users
+   3. Locate the `\Lib\site-packages` folder. This folder contains the packages you have installed in the pmv environment. The full path should look something like the following `C:\miniconda3\envs\pmv\Lib\site-packages`
+
+5. Copy the `ximea` folder into this folder this installs the ximea python API.
+
+To confirm a successful installation you can import this library into the python environment by opening an instance of  `pmv` python environment, then importing ximea (using `import ximea`), then running  `ximea.__version__` to check if a version number is returned. 
+
+
+## Launch Application
 
 Double clicking the file `LAUNCH_GUI.bat` in the pyMultiVideo code folder will activate the conda environment and launch the GUI.
 
 !!! tip "Creating a shortcut"
-    To launch the GUI from another folder (e.g, the Desktop), create a shortcut for the LAUNCH_GUI.bat there, and it will still be functional. 
+    To launch the GUI from another folder (e.g, the Desktop), create a shortcut for the LAUNCH_GUI.bat there, and it will still be functional.
 
 Alternatively you can manually activate the conda environment and launch the GUI:
 
