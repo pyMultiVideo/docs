@@ -6,9 +6,9 @@ Many scientific camera systems have the capcaptiy to do this using external fram
 
 ## Documentation
 
-- Each CameraAPI class will have a `GenericCamera.trigger_line` attribute. 
+- Each CameraAPI class will have a `GenericCamera.trigger_line` attribute.
 - This should be set to the line that want to be triggered. (so it is easily editable within the class.)
-- Current implementation is minimal and does not allow you to change the trigger line within the GUI.
+- Current implementation of pyMultiVideo does not allow you to change the trigger line within the GUI.
 
 ### set_acqusition_mode
 
@@ -16,20 +16,17 @@ Many scientific camera systems have the capcaptiy to do this using external fram
 GenericCamera.set_acquisition_mode(external_trigger: bool)
 ```
 
-Function called when acqusition mode is changed 
+Function called when acqusition mode is changed
 
- is the name of the function which is called when the acqusition mode is changed.
-If active=True, then the code to set the camera up in external trigger mode is run. If active=False, then the code to set the camera up in interal frame triggering is set. Both need to be implemented so that it can switch between them. 
+If `active = True`, then the code to set the camera up in external trigger mode is run. If `active = False`, then the code to set the camera up in interal frame triggering is set. Both need to be implemented so that it can switch between them.
 
-- `CameraConfig.external_trigger` is the attribute that is saved in the camera config which tell the application whether to run this code. 
-
+`CameraConfig.external_trigger` is the attribute that is saved in the camera config which tell pyMutliVideo (`GenericCamera.set_acqusition_mode(external_trigger=CameraConfig.external_trigger)` is run).
 
 ## Tutorial
 
+Here I present a tutorial on how pyMultiVideo can implement this with pyControl and a Micropython board.
 
-Here I present a tutorial on how pyMultiVideo can implement this.
-
-*Requirements*
+*Requirements:*
 
 1. [pyControl](https://pycontrol.readthedocs.io/en/latest/)
 2. [micropython](https://store.micropython.org/product/PYBv1.1) board
@@ -43,12 +40,12 @@ GPIO cable for this camera
 
 *Steps:*
 
-1. Install pyMutliVideo with the PySpin package installed. See instructure for this [here](https://pymultivideo.readthedocs.io/en/latest/user-guide/installation/)
-2. Install pyControl onto the machine. See the instructions [here](https://pycontrol.readthedocs.io/en/latest/#installation)
+1. Install pyMutliVideo with the PySpin package installed. See instructure for this [here](https://pymultivideo.readthedocs.io/en/latest/user-guide/installation/).
+2. Install pyControl onto the machine. See the instructions [here](https://pycontrol.readthedocs.io/en/latest/#installation).
 
 3. Plug in the Pyboard into a USB port and connect to that port. Connect the RJ45 cable from a port on the breakout board to the port adaptor port. In this example I use `port_6`.
 
-4. Connect the port adaptor pins so the ground pin is connected to the GPIO cable's ground pin (black) and the GPIO Line 2 pin (yellow).
+4. Connect the port adaptor pins so the ground pin is connected to the GPIO cable's ground pin (black) and the GPIO `Line2` pin (yellow). This means that the `SpinnakerCamera.trigger_line = 2`.
 
    ![pycontrol_output](../media/wiring-example.png)
 
@@ -95,3 +92,6 @@ The camera that you are trying to configure should look similar to this:
 This checking this box, runs the `SpinnakerCamera.set_acquisition_mode(True)` function, effectively configuring the camera to run in external frame triggering mode.
 
 By default, the each Camera API has a `trigger_line` attribute which is the name of the pin which will be used to to conifgure the external triggering. In the case of the `SpinnakerCamera.trigger_line` is 2.  
+
+
+6. If working correctly, the GUI should diplay that the camera output with a FPS of 60 Hz.
