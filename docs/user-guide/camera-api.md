@@ -17,10 +17,11 @@ Inside the `camera_api/` directory, there is a `generic_camera.py` file that you
 Duplicate this file to begin!
 
 <!-- You must rename the file to the name of the module class you are about to implement (e.g. `spinnaker.py` implements the `spinnaker` class). This naming the the way pyMultiVideo knows the name of the class it should inherit from the module.  -->
+
 ```python
 # Place holder function which returns a list of the available cameras.
 #     The should be uniquly idenified as a string.
-    
+
     # naming format requirements: NUMBERS-MODULENAME
     # type(name) == str
 ```
@@ -47,7 +48,7 @@ These functions are then used in the main GUI of the application to perform the 
 
 You may want to add new camera support to the application. To do this, you should add a new python file to the `/camera` directory.
 
-Within this you should define the behaviour required by the functions. For example the  new_camera.get_next_image() should return a np.ndarray from the function as has been done in the spinnaker_camera.get_next_image() function does.
+Within this you should define the behaviour required by the functions. For example the new_camera.get_next_image() should return a np.ndarray from the function as has been done in the spinnaker_camera.get_next_image() function does.
 
 This should be done for all the functions that are defined in the spinnaker camera and the
 
