@@ -1,9 +1,8 @@
-
 ## Will this application drop frames?
 
 This will depend on the implementation of the camera API used.
 
-This current release of the application has support FLIR cameras using the spinnaker-python API. Other video acqusition piplines could drop frames. 
+This current release of the application has support FLIR cameras using the spinnaker-python API. Other video acqusition piplines could drop frames.
 
 pyMultiVideo's interface with the spinnaker camera has functionality to avoid this problem.
 
@@ -22,7 +21,7 @@ bh_node.SetIntValue(bh_node.GetEntryByName("OldestFirst").GetValue())
 #### Frequency of buffer emptying
 
 2. Every time the frames are sent to the program to be encoded, all of the images currently in the buffer are retrieved (until no more are left). This ensures that the buffer is continuously being emptied, making sure that the buffer never approaches being full.
-This is implemented as follows.
+   This is implemented as follows.
 
 ```python
 """Gets all available images from the buffer and return images GPIO pinstate data and timestamps."""

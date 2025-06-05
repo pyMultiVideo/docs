@@ -11,7 +11,7 @@ In development:
 - Ximea Python API
 - OpenCV API (for Webcams)
 
-If you would like to support your own brand of cameras, you will need to write your own API for pyMultiVideo. This requires createing a python module (e.g. `new.py`). This `NewCamera` class will handle the required functionality of the that is required to be defined for pyMutliVideo.  
+If you would like to support your own brand of cameras, you will need to write your own API for pyMultiVideo. This requires createing a python module (e.g. `new.py`). This `NewCamera` class will handle the required functionality of the that is required to be defined for pyMutliVideo.
 
 ## GenericCamera
 
@@ -49,7 +49,7 @@ GenericCamera.get_width()
 
 Get the width of the image acquired from the GenericCamera
 
-### get_frame_rate_range(*exposure_time)
+### get_frame_rate_range(\*exposure_time)
 
 ```python
 GenericCamera.get_frame_rate_range(*exposure_time)
@@ -87,7 +87,7 @@ Get the range of gain values that are available to the GenericCamera.
 
 Returns the gain range as a tuple of `int`s
 
-### get_exposure_time_range(*fps)
+### get_exposure_time_range(\*fps)
 
 ```python
 GenericCamera.get_exposure_time_range(fps)
@@ -195,6 +195,36 @@ It is important that this functionality is implemented correctly as the GUI disp
 
 The rate of this function call is defined in `code/config/config.py` under the `gui_config["camera_update_rate"]` in Hz.
 
+Recommended pseudocode format for implementing this function:
+
+```python
+# Instantiate new temp buffers
+img_buffer = []
+GPIO_buffer = []
+timestamps_buffer = []
+dropped_frames = 0
+try:
+  while True:
+        image = cam.get_next_image(timeout=0) # The `get_next_image` function waits for an image until timeout seconds elapse, then raises an error. Setting timeout=0 empties all images from the buffer immediately, raising an error once none are left. This is the recommended way to flush the camera's internal buffer.
+        img_buffer.append(image.get_byte_data()) # Get the data in bytes
+        GPIO_buffer.append(image.get_GPIO_data()) # Get the pin states from the image
+        timestamps_buffer.append(image.get_timestamp()) # Get the timestampe from the image
+        if dropped_frames: # Check for dropped frames
+            dropped_frames += 1
+except EmptyBufferError:
+ # Only returns images if there are images to be returned
+    if len(img_buffer) == 0:
+        return
+    else:
+        return
+        {
+            "images" : img_buffer
+            "gpio_data" : GPIO_buffer
+            "timestamps" : timestamps_buffer
+            "dropped_frames": dropped_frames
+        }
+```
+
 ## list_available_cameras
 
 ```python
@@ -205,7 +235,7 @@ returns a `list` of the `unique_id`s that will be used to initialise the cameras
 
 These unique_id s must be different to eachother otherwise the application will have undefined behaviour when the `unique_id` are the same for two different cameras.
 
-All `unique_id` must be in the format   `<module>-<camera_module_name>`. For example the spinnaker unique_id  will all be the format `<serial_number>-spinnaker` since the camera_api for the Spinnaker cameras is called `spinnaker.py`
+All `unique_id` must be in the format `<module>-<camera_module_name>`. For example the spinnaker unique_id will all be the format `<serial_number>-spinnaker` since the camera_api for the Spinnaker cameras is called `spinnaker.py`
 
 `VERBOSE` will tell the function to print out the names of the `unique_id`s that are generated. Useful for debugging.
 

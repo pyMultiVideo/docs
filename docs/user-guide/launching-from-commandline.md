@@ -1,15 +1,11 @@
 # Launching the application from the command line
 
-For integration with other software it is possible to launch the application from the command line. 
-
-
-
-
-
+For integration with other software it is possible to launch the application from the command line.
 
 ## Example comand line launch of pyMutlivideo
 
-We provide the following python example of how you might do this. 
+We provide the following python example of how you might do this.
+
 ```python
 import subprocess, sys
 from pathlib import Path

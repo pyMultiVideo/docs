@@ -26,7 +26,7 @@ If `active = True`, then the code to set the camera up in external trigger mode 
 
 Here I present a tutorial on how pyMultiVideo can implement this with pyControl and a Micropython board.
 
-*Requirements:*
+_Requirements:_
 
 1. [pyControl](https://pycontrol.readthedocs.io/en/latest/)
 2. [micropython](https://store.micropython.org/product/PYBv1.1) board
@@ -35,10 +35,10 @@ Here I present a tutorial on how pyMultiVideo can implement this with pyControl 
 5. RJ45 Ethernet cable
 
 - Camera:
-Spinnaker Chameleon3 Camera
-GPIO cable for this camera
+  Spinnaker Chameleon3 Camera
+  GPIO cable for this camera
 
-*Steps:*
+_Steps:_
 
 1. Install pyMutliVideo with the PySpin package installed. See instructure for this [here](https://pymultivideo.readthedocs.io/en/latest/user-guide/installation/).
 2. Install pyControl onto the machine. See the instructions [here](https://pycontrol.readthedocs.io/en/latest/#installation).
@@ -76,7 +76,7 @@ def state_1(event):
        output.pulse(freq=60, duty_cycle=50)
 ```
 
-- Save this file and upload it to the Pyboard. Click *Start*. The pyControl GUI output should look like this:
+- Save this file and upload it to the Pyboard. Click _Start_. The pyControl GUI output should look like this:
 
 ![pycontrol_output](../media/pyControl_GUI.png)
 
@@ -84,14 +84,13 @@ Here the pyControl state machine has entered `state_1`, which causes the `output
 
 1. Connect the GPIO line
 
-5. Open pyMultiVideo and configure the settings of the camera *External Trigger* to be checked.
+2. Open pyMultiVideo and configure the settings of the camera _External Trigger_ to be checked.
 
 The camera that you are trying to configure should look similar to this:
 ![pycontrol_output](../media/external_frame_triggering.png)
 
 This checking this box, runs the `SpinnakerCamera.set_acquisition_mode(True)` function, effectively configuring the camera to run in external frame triggering mode.
 
-By default, the each Camera API has a `trigger_line` attribute which is the name of the pin which will be used to to conifgure the external triggering. In the case of the `SpinnakerCamera.trigger_line` is 2.  
-
+By default, the each Camera API has a `trigger_line` attribute which is the name of the pin which will be used to to conifgure the external triggering. In the case of the `SpinnakerCamera.trigger_line` is 2.
 
 6. If working correctly, the GUI should diplay that the camera output with a FPS of 60 Hz.

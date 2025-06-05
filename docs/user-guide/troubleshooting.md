@@ -1,7 +1,6 @@
-
 ## GUI can't be opened
 
-To open the GUI you must run the   `pyMultiVideo_GUI.pyw`. Furthermore the python files must be opened using the python virtual environment that has been setup using the installation scripts. This means activating the conda environment created using `miniconda`, then using this verison of python to run the `pyMultiVideo_GUI.pyw`.
+To open the GUI you must run the `pyMultiVideo_GUI.pyw`. Furthermore the python files must be opened using the python virtual environment that has been setup using the installation scripts. This means activating the conda environment created using `miniconda`, then using this verison of python to run the `pyMultiVideo_GUI.pyw`.
 
 To do this manually:
 
@@ -14,7 +13,7 @@ To do this manually:
 
 - This means that python is not able detect the nvidia card. Which is likely to due to an driver issue to do with the GPU.
 - Ensure that the GPU device is properly being detected by the windows machine by installing the correct driver.
-The following code is being used to detect the presence of a GPU. If this code is not running correctly, the GPU will not be detected.
+  The following code is being used to detect the presence of a GPU. If this code is not running correctly, the GPU will not be detected.
 
 ```python
 subprocess.check_output("nvidia-smi")
