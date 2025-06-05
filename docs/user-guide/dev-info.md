@@ -1,12 +1,12 @@
 # Information for developers
 
-In this page we outline the design considerations for pyMultiVideo. This will likely be useful if you would like to develop pyMultiVideo for your specific use case.
+In this page we outline the design considerations for pyMultiVideo. This will likely be useful if you would like to extend the functionality for pyMultiVideo for your specific use case.
 
 ## pyMultiVideo Modules
 
 pyMultiVideo is a python based GUI application for multiple video acqusition.
 
-The PyQt GUI application is currently implemented using two tabs.
+The PyQt GUI application is currently implemented primarily using two tabs and widget for displaying camera information.
 
 1. `VideoCapture` Tab
 
@@ -24,9 +24,9 @@ Plugs into the CameraWidget class as a 'Data Producer' which is then displayed t
 
 - `CameraWidget` module
 
-This module displays the data recieved from the `camera_api.GenericCamera` class. This includes information like the .
+This module displays the data recieved from the `camera_api.GenericCamera` class. This includes information like the camer image information itself or GPIO data. When in the _Cameras_ tab the `CameraWidget` is used in preview mode and displays additional information about camera acqusition settings (exposure time & gain).
 
-- `camera_api.GenericCamera` Module
+- `camera_api.GenericCamera` module
 
 This widget wraps any functions that are specific to the camera manufactorer. This means that many different camera_api modules can be written to suppport different types camera manufactors. For more information about how to implement a currently unsupported camera manufacter please see the [camera_api](./camera-api-technical-reference.md) reference documentation.
 
@@ -37,4 +37,4 @@ _Figure 1. This diagram demonstrates how the data for this application flows thr
 
 If you would like to add something on the application wide system, you should consider putting it in the VideoCaptureTab class. Only one VideoCapture tab is instantiated in pyMultiVideo. An example of this includes the Threadpool for sending data to FFMPEG. Since only one threadpool is required for the application (And jobs can be submitted from multiple places).
 
-If you would liek to aedd something on the camera specific level, then you should consider putting it into the CameraWidget class since one of these classes is added specifically for each camera that is initalised for recording. An example for this is the Camera API class. This is specific to each camera so belongs on the level of the CameraWidget.
+If you would like to add something on the camera specific level, then you should consider putting it into the CameraWidget class since one of these classes is added specifically for each camera that is initalised for recording. An example for this is the Camera API class. This is specific to each camera so belongs on the level of the CameraWidget.

@@ -22,10 +22,10 @@ nav:
       - Updating pyMultiVideo: user-guide/updates.md
       - Troubleshooting: user-guide/troubleshooting.md
       - Frequently Asked Questions: user-guide/faqs.md
+  - Contributing: contributing.md
   - Developer Information:
       - Introduction: user-guide/dev-info.md
       - Camera API: user-guide/camera-api-technical-reference.md
-  - Contributing: contributing.md
 
   - About:
       - Release Notes: about/release-notes.md
