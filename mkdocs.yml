@@ -4,33 +4,35 @@ site_description: Open source, Python based, mutliple video acquisition.
 site_author: Alif Aziz
 
 theme:
-    name: readthedocs
-    logo: logo.png
+  name: readthedocs
+  logo: logo.png
 
 markdown_extensions:
-    - admonition
-    - toc:
-        permalink: True
+  - admonition
+  - toc:
+      permalink: True
 
 repo_url: https://github.com/pyMultiVideo/code
 
 nav:
-- Home: index.md
-- User Guide:
-    - Installation: user-guide/installation.md
-    - Graphical user interface (GUI): user-guide/graphical-user-interface.md
-    - Updating pyMultiVideo: user-guide/updates.md
-    - Troubleshooting: user-guide/troubleshooting.md
-    - Frequently Asked Questions: user-guide/faqs.md
-    - Camera API: user-guide/camera-api-technical-reference.md
-- Contributing: contributing.md    
+  - Home: index.md
+  - User Guide:
+      - Installation: user-guide/installation.md
+      - Graphical user interface (GUI): user-guide/graphical-user-interface.md
+      - Updating pyMultiVideo: user-guide/updates.md
+      - Troubleshooting: user-guide/troubleshooting.md
+      - Frequently Asked Questions: user-guide/faqs.md
+  - Developer Information:
+      - Introduction: user-guide/dev-info.md
+      - Camera API: user-guide/camera-api-technical-reference.md
+  - Contributing: contributing.md
 
-- About:
-    - Release Notes: about/release-notes.md
-    - License: about/license.md
+  - About:
+      - Release Notes: about/release-notes.md
+      - License: about/license.md
 
-- Quick Links:
-    - Help and Discussions: https://github.com/orgs/pyMultiVideo/discussions
-    - GitHub repositories: https://github.com/pyMultiVideo
+  - Quick Links:
+      - Help and Discussions: https://github.com/orgs/pyMultiVideo/discussions
+      - GitHub repositories: https://github.com/pyMultiVideo
 
 copyright: Copyright &copy; 2024-2025 Alif Aziz & Thomas Akam.
