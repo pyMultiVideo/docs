@@ -8,11 +8,6 @@ To update this repository to the latest version, you can simply pull the latest 
 
 > Note: If you have made any changes to the source code of the application, you will be asked to either [stash](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning) or discard these changes from the orginial repo before pulling any further changes.
 
-
-
-
-
-
 There is no need to re-install the application's _python_ environment or FFMPEG since this should already be installed correctly and only requires updating if PySpin has had another release.
 
 You can check the version number in the window title (e.g. _pyMultiVideo v1.0.0_)
