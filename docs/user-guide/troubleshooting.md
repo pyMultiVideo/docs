@@ -1,27 +1,15 @@
-## GUI can't be opened
+# Troubleshooting
 
-To open the GUI you must run the `pyMultiVideo_GUI.pyw`. Furthermore the python files must be opened using the python virtual environment that has been setup using the installation scripts. This means activating the conda environment created using `miniconda`, then using this verison of python to run the `pyMultiVideo_GUI.pyw`.
+If you are having trouble with starting or using the application, please post on pyMultiVideo's [Issues](https://github.com/pymultivideo/code/issues) page, if the problem that you are having isn't addressed here.
 
-To do this manually:
-
-1. Run `conda env list` to show the list of conda environments
-2. You should see a list of the conda python enviroments, including one called `C:\Program Files\miniconda3\envs\pyMultiCam_env`
-3. Run `conda activate C:\Program Files\miniconda3\envs\pyMultiCam_env` to activate this conda environment.
-4. Run `python path/to/code/pyMultiVideo_GUI.pyw` to open the python application.
-
-### My GUI is not showing up even though there is one installed on the machine
+### GPU not encoding video despite the machine having a graphics card
 
 - This means that python is not able detect the nvidia card. Which is likely to due to an driver issue to do with the GPU.
 - Ensure that the GPU device is properly being detected by the windows machine by installing the correct driver.
-  The following code is being used to detect the presence of a GPU. If this code is not running correctly, the GPU will not be detected.
-
+- The following code is being used to detect the presence of a GPU. If this code is not running correctly, the GPU will not be detected.
 ```python
 subprocess.check_output("nvidia-smi")
 ```
-
-### I want to double click `pyMutliVideo_GUI.pyw` and open the GUI without using terminal
-
-In the `code/` directory, there is a file called `LAUNCH_GUI.bat` that contains a script that can be doubled clicked and will launch a terminal application in which pyMultiVideo will launch.
 
 ### `conda` hasnt been added to path
 
@@ -32,10 +20,6 @@ For the powershell script to work, it must know the conda command. The powershel
 Do this by adding the following directories to PATH: `C:\Program Files\miniconda3;C:\Program Files\miniconda3\Scripts;C:\Program Files\miniconda3\Library\bin`
 
 [This](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10) is a link to a stack exchange post which might be helpful.
-
-If you have downloaded and installed miniconda using the scripts provided in the `_installation/` directory then this is where miniconda has been installed.
-
-You can check that this has been successful by navigating to the `C:\Program Files` folder. Here you should see a file called `miniconda` This means miniconda has been installed correctly.
 
 ### FileNotFoundError: FFMPEG binary not found. Please install FFMPEG and ensure it's in your PATH
 
@@ -55,22 +39,18 @@ libswresample   5.  3.100 /  5.  3.100
 libpostproc    58.  3.100 / 58.  3.100
 ```
 
-## Conda not initialised
-
-- When installing the software you may see a error that asks you to `Run 'conda init' before 'conda activate'` This usually happens on first installation of miniconda.
-- It requires you to run `conda init`, then restart the powershell instance. You can check if `conda activate` works by running this command before running the installation script again. There shuld be no red error message if `conda activate` has run correctly.
-
-![Not initalised](../media/conda-not-initialised.png)
-
 ## Spinnaker Cameras have not shown up in the GUI
 
-This likely due to the Spinnaker drivers not being installed correctly.
+If you see this message then it is likely that pyMultiVideo has not detected the cameras.
+![Not initalised](../media/no_cameras_connected.png)
 
-In this case, you should check that the drivers are working in `Spinview`, spinnaker's own recording application, which has more explicit error message for drivers.
+You should check if the device manager can detect the cameras, to ensure they are connected to the machine and being detected correctly. You should see a drop down specifically for the FLIR USB Cameras.
+
+![device-managed-view](../media/flir-camera-drivers-view.png)
+
+This could be for a range of reasons, however is most likely due to the Spinnaker drivers not being installed correctly.
+
+In this case, you should check that the drivers are working in `Spinview`, spinnaker's own recording application, which has more explicit error message for drivers. It might also be that the spinview version is out of date. It is worth trying to reinstall the SpinView application.
 
 If you see something like the following image, then you might have a problem with your drivers. I am not 100% sure why this occurs, however reinstalling the spinnaker drivers from their website might be able to fix it.
 ![bad drivers](../media/driver-problem.png)
-
-Note: that you camera should likely appear like the following image the device manager, and not as a USB camera for correct installation:
-
-![device-managed-view](../media/flir-camera-drivers-view.png)

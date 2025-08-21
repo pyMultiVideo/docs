@@ -22,7 +22,6 @@ nav:
       - Data Format: user-guide/data-format.md
       - Updating pyMultiVideo: user-guide/updates.md
       - Troubleshooting: user-guide/troubleshooting.md
-      - Frequently Asked Questions: user-guide/faqs.md
       - Camera API: user-guide/camera-api-technical-reference.md
   - Contributing: contributing.md
 
