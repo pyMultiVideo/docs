@@ -1,4 +1,4 @@
-# Updates
+# Updating pyMultiVideo
 
 To update this repository to the latest version, you can simply pull the latest changes from the main branch of the [code](https://github.com/pyMultiVideo/code) repository on GitHub.
 
