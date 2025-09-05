@@ -64,9 +64,9 @@ Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
 #### Install the Spinnaker SDK and PySpin python package
 
 1. Go to the [Spinnaker SDK Download](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK) page. You will need to create an account on the Teledyne website to access the downloads.
-2. Download the latest version of the main Spinnaker SDK for windows (e.g. `SpinnakerSDK_FULL_4.2.0.83_x64.exe`) and the Python 3.10 bindings (e.g. `spinnaker_python-4.2.0.83-cp310-cp310-win_amd64.zip`)
+2. Download the latest version of the main Spinnaker SDK for windows (e.g. `SpinnakerSDK_FULL_x.x.x.x_x64.exe`) and the Python 3.10 bindings (e.g. `spinnaker_python-x.x.x.x-cp310-cp310-win_amd64.zip`)
 3. Run the Spinnaker SDK installer and select the `Application Development` installation profile.
-4. Unzip the .zip file containing the spinnaker python bindings. This contains a .whl file (e.g. `spinnaker_python-4.2.0.83-cp310-cp310-win_amd64.whl` used to install the PySpin module using pip:
+4. Unzip the .zip file containing the spinnaker python bindings. This contains a .whl file (e.g. `spinnaker_python-x.x.x.x-cp310-cp310-win_amd64.whl` used to install the PySpin module using pip:
 
    1. Open a windows command promp and `cd` to the folder containing the .whl file.
    2. Activate the `pmv` conda environment with the command `conda activate pmv`.
