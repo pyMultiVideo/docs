@@ -59,6 +59,8 @@ For further information on cloning github repositories see the [Github documenta
 
 Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
 
+> Please note that you only need to install the SDK of the camera manufacturer you are going to use.
+
 #### Install the Spinnaker SDK and PySpin python package
 
 1. Go to the [Spinnaker SDK Download](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK) page. You will need to create an account on the Teledyne website to access the downloads.
