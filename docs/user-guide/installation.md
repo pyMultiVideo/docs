@@ -82,7 +82,7 @@ The steps for the firmware upgrade are as follows:
 
 1. Complete the normal installation of pyMutliVideo.
 2. Download the beta firmware for the BlackFlyS camera to a known location
-   https://teledyne.app.box.com/s/j4tkdvyi7xlym1baxv5g0cm8mlygcwdv
+   [https://teledyne.app.box.com/s/j4tkdvyi7xlym1baxv5g0cm8mlygcwdv](https://teledyne.app.box.com/s/j4tkdvyi7xlym1baxv5g0cm8mlygcwdv)
 3. Download and open [Spinview application](https://softwareservices.flir.com/Spinnaker/latest/_spin_view_guide.html).
 4. Upgrade the BlackFlyS camera firmware ([This](https://support.swingcatalyst.com/hc/en-us/articles/360018779740-Upgrading-the-firmware-on-the-FLIR-Blackfly-S) guide might be helpful here).
    - Find the appropriate camera in the 'Devices' menu.
