@@ -74,22 +74,17 @@ Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
 
 ##### Installation of BlackFly camera
 
-The [BlackFlyS](https://www.teledynevisionsolutions.com/en-gb/products/blackfly-s-usb3/?vertical=machine+vision&segment=iis) Camera firmware has an important bug which prevents camera frame metadata from being accessable via the python API. Fortunately, there is work around that requires separately downloading and upgrading the firmware for the BlackFlyS camera.
+The [BlackFlyS](https://www.teledynevisionsolutions.com/en-gb/products/blackfly-s-usb3/?vertical=machine+vision&segment=iis) camera firmware has a bug which prevents camera frame metadata (needed by pyMultivideo) from being accessible via the spinview python API.   The manufacturers of the BlackFlyS cameras (Teledyne) do not have a timeline for fixing the bug in the production firmware, but provided a download link for a beta version of the firmware in which the bug has been fixed.  The steps for the firmware upgrade are as follows:
 
-I contacted the manufacturers of the BlackFlyS cameras (Teledyne) they currently do not have a timeline for fixing the bug in the production firmware for the camera, however they provided with beta firmware which where this bug has been fixed.
-
-The steps for the firmware upgrade are as follows:
-
-1. Complete the normal installation of pyMutliVideo.
-2. Download the beta firmware for the BlackFlyS camera to a known location
+1. Complete the normal installation of pyMultiVideo.
+2. Download the beta firmware for the BlackFlyS camera to a known location from this link:
    [https://teledyne.app.box.com/s/j4tkdvyi7xlym1baxv5g0cm8mlygcwdv](https://teledyne.app.box.com/s/j4tkdvyi7xlym1baxv5g0cm8mlygcwdv)
-3. Download and open [Spinview application](https://softwareservices.flir.com/Spinnaker/latest/_spin_view_guide.html).
-4. Upgrade the BlackFlyS camera firmware ([This](https://support.swingcatalyst.com/hc/en-us/articles/360018779740-Upgrading-the-firmware-on-the-FLIR-Blackfly-S) guide might be helpful here).
-   - Find the appropriate camera in the 'Devices' menu.
-   - Right click the camera.
-   - Then select 'Update Device Firmware'
+3. Download and open [Spinview](https://softwareservices.flir.com/Spinnaker/latest/_spin_view_guide.html) application.
+4. Upgrade the BlackFlyS camera firmware by following the following steps (see also [this](https://support.swingcatalyst.com/hc/en-us/articles/360018779740-Upgrading-the-firmware-on-the-FLIR-Blackfly-S) guide).
+   - Find the camera in the 'Devices' menu.
+   - Right click the camera and select 'Update Device Firmware'
    - A pop-up will show up where you should select the `.ez2` firmware file downloaded in Step 2.
-   - Then click 'Start'. You must also acknowledge the warning to not disconnect the camera during the firmware update.
+   - Click 'Start' and OK the warning to not disconnect the camera during the firmware update.
 
 #### Install the Ximea python API
 
