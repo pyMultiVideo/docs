@@ -4,32 +4,20 @@
 
 ## Maintenance team
 
-* [Alif Aziz](https://github.com/alifuaziz) <alif.aziz@psy.ox.ac.uk>
-* [Thomas Akam](https://github.com/ThomasAkam) <thomas.akam@psy.ox.ac.uk>
+* [Thomas Akam](https://github.com/ThomasAkam) - <thomas.akam@psy.ox.ac.uk>
 
 ## Change log
 
-## Version 1.0.0
+### Version 1.0.0
 
-Key features:
+#### Features
 
-GUI:
+* Acquisition and visualisation of video and GPIO pin-state data from multiple cameras.
+* Camera API modules for FLIR, Ximea, and USB webcams.
+* Support for external frame triggering and outputting of frame trigger pulses from a connected microcontroller.
 
-* Mutliple video acquisition by instantiating multiple camera API objects at once.
-  * GUI to display the video streaming from all cameras being used at once.
-  * GUI layout can be saved to *.json* files and loaded. 
-  * Video files can be named easily. 
+* h264 and h265 video compression on either the CPU or NVIDA GPU.
 
-Video Acquisition:
+* Saving and loading of acquisition configurations for efficient high-throughput experiments.
 
-* Use of *ffmpeg* to encode video and save it to disk
-
-* Aquisition settings configurable: Frame rate, Gain, Exposure Time, downsampling
-  * Camera settings automatically saved and used after the first start up of the application.
-  * Preview of the aquisition of the camera whilst setting acquisition configuration
-* Default use of colour pixel formats is available
-
-Spinnaker:
-
-* Implemented reading the GPIO pins from the each image returned from the camera (spinnaker)
-* Buffer handling implemented as to not prevent dropped frames.
+* Open source Python application, implemented with PyQt, PyQtGraph, and ffmpeg.

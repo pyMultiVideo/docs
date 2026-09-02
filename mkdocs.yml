@@ -1,7 +1,7 @@
 site_name: pyMultiVideo
 site_url: https://pymultivideo.readthedocs.io/
 site_description: Open source, Python based, mutliple video acquisition.
-site_author: Alif Aziz
+site_author: Thomas Akam
 
 theme:
   name: readthedocs
@@ -20,9 +20,8 @@ nav:
       - Installation: user-guide/installation.md
       - Graphical user interface (GUI): user-guide/graphical-user-interface.md
       - Data Format: user-guide/data-format.md
-      - Updating pyMultiVideo: user-guide/updates.md
       - Troubleshooting: user-guide/troubleshooting.md
-      - Camera API: user-guide/camera-api-technical-reference.md
+      - Camera API: user-guide/camera-api.md
   - Contributing: contributing.md
 
   - About:
@@ -33,4 +32,4 @@ nav:
       - Help and Discussions: https://github.com/orgs/pyMultiVideo/discussions
       - GitHub repositories: https://github.com/pyMultiVideo
 
-copyright: Copyright &copy; 2024-2025 Alif Aziz & Thomas Akam.
+copyright: Copyright &copy; 2024-2026 Alif Aziz & Thomas Akam.

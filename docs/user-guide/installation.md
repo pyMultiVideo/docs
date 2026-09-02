@@ -8,24 +8,30 @@ pyMultivideo requires a Python 3 installation with the following packages:
 - PyQt6
 - pyqtgraph
 - opencv-python
-- PySpin
+- pyserial
 
-PySpin, the Python bindings for the [Spinnaker SDK](https://www.teledynevisionsolutions.com/products/spinnaker-sdk/) used for controlling FLIR cameras, is only compatible with Python 3.10. We therefore recommend creating a dedicated miniconda environment for pyMultivideo as detailed in the instructions below.
+Additional Python modules are required for interacting with different camera systems, only modules for camera systems you will use need to be installed.
 
-pyMultivideo uses [ffmpeg](https://www.ffmpeg.org/) to compress and save videos, so requires ffmpeg to be installed and on the system path such that ffmpeg can be run from the command line with the `ffmpeg` command.
+- PySpin - for controlling FLIR cameras through the [Spinnaker SDK](https://www.teledynevisionsolutions.com/products/spinnaker-sdk/).
+- ximea - for controlling Ximea cameras.
+
+We recommend creating a dedicated Miniconda environment for pyMultivideo as detailed in the instructions below.  PySpin is only compatible with Python 3.10 so this Python version was used for all testing.
+
+pyMultivideo uses [ffmpeg](https://www.ffmpeg.org/) to compress and save videos, so requires it to be installed and on the system path such that ffmpeg can be run from the command line with the `ffmpeg` command.
 
 To compress videos on the GPU it is necessary to have an NVIDIA GPU that supports NVENC video encoding, for information about which GPUs support this see [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new). If you have a compatible GPU then it is recommended to install the latest Studio Driver for your graphics card from the [driver downloads](https://www.nvidia.com/en-us/drivers/) page.
 
-## Step-by-step installation guide
+We have only tested pyMultiVideo on Windows 10 and 11.
 
-We have only installed and tested pyMultiVideo on Windows 10 and 11.
+## Step-by-step installation guide
 
 ### Get the pyMultiVideo code
 
-The recommended way to get pyMultiVideo is to clone the repository <https://github.com/pyMultiVideo/code> as this makes it straightforward to update the application when new versions are released by pulling the latest version from the repository.
+The recommended way to get pyMultiVideo is to clone the repository <https://github.com/pyMultiVideo/code> as this makes it straightforward to update the application when new versions are released by pulling the latest version from the repository.  
 
 - If you are using the [_git bash_ terminal](https://gitforwindows.org), simply navigate to the folder you would like to code to be stored in (`cd path/to/code`)
 - Clone the repository to the desired location: `git clone https://github.com/pyMultiVideo/code.git`
+- Alternatively you clone the repository using a git client with a graphical interface such as [Github Desktop](https://github.com/apps/desktop).
 
 For further information on cloning github repositories see the [Github documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
@@ -55,11 +61,9 @@ For further information on cloning github repositories see the [Github documenta
    1. Change directory to the pyMultiVideo code folder that contains the file `requirements.txt` using `cd path/to/code/folder`.
    2. Install the python packages with `pip install -r requirements.txt`
 
-### Install a camera API of your choice:
+### Install required camera system modules:
 
-Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
-
-> Please note that you only need to install the SDK of the camera manufacturer you are going to use.
+Install Python modules for interfacing with camera systems, currently the FLIR Spinnaker and Ximea Python APIs  are supported by pyMultivideo.  You only need to install Python modules for camera systems you are going to use.
 
 #### Install the Spinnaker SDK and PySpin python package
 
@@ -74,7 +78,7 @@ Currently the Spinnaker SDK and the Ximea API are supported by pyMultivideo:
 
 ##### Installation of BlackFly camera
 
-The [BlackFlyS](https://www.teledynevisionsolutions.com/en-gb/products/blackfly-s-usb3/?vertical=machine+vision&segment=iis) camera firmware has a bug which prevents camera frame metadata (needed by pyMultivideo) from being accessible via the spinview python API.   The manufacturers of the BlackFlyS cameras (Teledyne) do not have a timeline for fixing the bug in the production firmware, but provided a download link for a beta version of the firmware in which the bug has been fixed.  The steps for the firmware upgrade are as follows:
+The standard [BlackFlyS](https://www.teledynevisionsolutions.com/en-gb/products/blackfly-s-usb3/?vertical=machine+vision&segment=iis) camera firmware does not implement PySpin access to all the camera frame metadata needed by pyMultivideo.   The manufacturers of the BlackFlyS cameras (Teledyne/FLIR) do not have a timeline for fixing this issue in the production firmware, but provided a download link for a beta version of the firmware in which it has been fixed.  The steps for the firmware upgrade are as follows:
 
 1. Complete the normal installation of pyMultiVideo.
 2. Download the beta firmware for the BlackFlyS camera to a known location from this link:
@@ -104,13 +108,31 @@ To confirm a successful installation you can import this library into the python
 
 ## Launch Application
 
-Double clicking the file `LAUNCH_GUI.bat` in the pyMultiVideo code folder will activate the conda environment and launch the GUI.
+Double clicking the file `LAUNCH_pyMV.bat` in the pyMultiVideo code folder will activate the conda environment and launch the GUI.
 
 !!! tip "Creating a shortcut"
-To launch the GUI from another folder (e.g, the Desktop), create a shortcut for the LAUNCH_GUI.bat there, and it will still be functional.
+	To launch the GUI from another folder (e.g, the Desktop), create a shortcut for the LAUNCH_GUI.bat there, and it will still be functional.
 
 Alternatively you can manually activate the conda environment and launch the GUI:
 
 1. Open a windows command prompt and activate the conda environment with `conda activate pmv`.
 2. `cd` to the pyMultiVideo code folder that contains the file `pyMultiVideo_GUI.pyw`.
 3. Run the GUI with the command `python pyMultiVideo_GUI.pyw`
+
+## Updating pyMultiVideo
+
+If you have obtained the pyMultivideo code by cloning the repository from Github, you can update the software by pulling the latest version from Github.
+
+If you are using git bash:
+
+1. Open git bash (as Administrator if permision are required to do so)
+2. Navigate to the pyMultiVideo folder (`cd C:\pyMultiVideo\code`). You should be able to see the name of the branch in brackets `(main)` if this has been done successfully.
+3. Run [`git pull`](https://git-scm.com/docs/git-pull) to download any updates that have occured since installing the application
+
+> Note: If you have made any changes to the source code of the application, you will be asked to either [stash](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning) or discard these changes from the original repo before pulling any further changes.
+
+Alternatively you can use a graphical git client (e.g. Github Desktop) rather than git bash to pull the latest version from Github.
+
+There is no need to re-install the application's _python_ environment or FFMPEG since this should already be installed correctly.
+
+You can check the version number in the window title (e.g. _pyMultiVideo v1.0.0_)
