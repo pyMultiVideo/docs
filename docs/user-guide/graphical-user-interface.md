@@ -41,7 +41,7 @@ The `esc` key exits maximise or full screen modes.
 
 ## Settings Tab
 
-![cameras-tab](../media/Setup-tab.png)
+![cameras-tab](../media/settings_tab.png)
 
 The settings tab is used to configure application and camera settings.  When settings are changed they are saved to disk as json files in the `\config` directory.
 
