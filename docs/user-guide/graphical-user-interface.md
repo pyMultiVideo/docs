@@ -56,7 +56,7 @@ The FFMPEG settings control video encoding parameters during recording to disk.
 
 ### Frame trigger settings
 
-The frame trigger settings are used to configure pulse output from a microcontroller to trigger camera frame acquisition.  This is useful when frame acquisition times of multiple cameras need to be precisely synchronised, e.g. when multiple cameras are used for 3D tracking.  The frame trigger settings only control trigger pulse output, enabling/disabling external frame triggering for individual cameras is done using the camera settings table.  
+The frame trigger settings are used to configure pulse output from a microcontroller to trigger camera frame acquisition.  This is useful when frame acquisition times of multiple cameras need to be precisely synchronised, e.g. when multiple cameras are used for 3D tracking.  When recording is started or stopped on multiple cameras simultaneously, trigger pulse output is paused as the software iterates over cameras to execute the command, ensuring that precisely the same set of trigger pulses are responsible for the recorded frames on all cameras.  The frame trigger settings only control trigger pulse output, enabling/disabling external frame triggering for individual cameras is done using the camera settings table.   
 
 The frame trigger output functionality works with microcontrollers running Micropython.  It has been tested with pyBoard v1.1 and Tiny2040 microcontrollers, but should work with any microcontroller that is running Micropython and appears to the computer as a USB serial device.
 

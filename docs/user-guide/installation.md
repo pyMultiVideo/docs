@@ -19,7 +19,7 @@ We recommend creating a dedicated Miniconda environment for pyMultivideo as deta
 
 pyMultivideo uses [ffmpeg](https://www.ffmpeg.org/) to compress and save videos, so requires it to be installed and on the system path such that ffmpeg can be run from the command line with the `ffmpeg` command.
 
-To compress videos on the GPU it is necessary to have an NVIDIA GPU that supports NVENC video encoding, for information about which GPUs support this see [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new). If you have a compatible GPU then it is recommended to install the latest Studio Driver for your graphics card from the [driver downloads](https://www.nvidia.com/en-us/drivers/) page.
+To compress videos on the GPU it is necessary to have an NVIDIA GPU that supports NVENC video encoding.  Most modern NVIDA GPUs have this functionality but you can check specific models [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new).  If you need to buy a GPU specifically for this application, the RTX A400 is a good option as it is cheap, compact and is powered only via the PCI slot, so can be installed in most standard office desktops.  If you have a compatible GPU then it is recommended to install the latest Studio Driver for your graphics card from the [driver downloads](https://www.nvidia.com/en-us/drivers/) page.
 
 We have only tested pyMultiVideo on Windows 10 and 11.
 

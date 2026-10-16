@@ -14,7 +14,7 @@ If you get an error message on starting the program saying FFPEG path not found,
 
 If the GUI runs but your cameras are not detected this could be due to one of the following reasons:
 
-- The camera system or specific camera model are not supported by pyMultivideo.  Currently pyMultivideo supports cameras from FLIR (only tested with Chameleon 3 and Blackfly cameras), Ximea and USB webcams.
+- The camera system or specific camera model are not supported by pyMultivideo.  Currently pyMultivideo supports cameras from FLIR (only tested with Chameleon 3 and Blackfly cameras), Ximea (only tested with xiQ cameras) and USB webcams.
 - The camera drivers are not correctly installed (e.g [Spinnaker](https://www.teledynevisionsolutions.com/products/spinnaker-sdk/) for FLIR cameras).
 - The Python module for controlling the cameras is not correctly installed (e.g. PySpin for FLIR cameras).
 
