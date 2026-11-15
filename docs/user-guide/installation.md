@@ -19,9 +19,13 @@ We recommend creating a dedicated Miniconda environment for pyMultivideo as deta
 
 pyMultivideo uses [ffmpeg](https://www.ffmpeg.org/) to compress and save videos, so requires it to be installed and on the system path such that ffmpeg can be run from the command line with the `ffmpeg` command.
 
-To compress videos on the GPU it is necessary to have an NVIDIA GPU that supports NVENC video encoding.  Most modern NVIDA GPUs have this functionality but you can check specific models [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new).  If you need to buy a GPU specifically for this application, the RTX A400 is a good option as it is cheap, compact and is powered only via the PCI slot, so can be installed in most standard office desktops.  If you have a compatible GPU then it is recommended to install the latest Studio Driver for your graphics card from the [driver downloads](https://www.nvidia.com/en-us/drivers/) page.
+### Computer hardware
 
-We have only tested pyMultiVideo on Windows 10 and 11.
+We have only tested pyMultiVideo on Windows 10 and 11.  The computer specifications required will depend on the number of cameras and acquisition frame rates, but pyMultivideo typically does not require high-end computer hardware, e.g. in testing we recorded from 6 Chameleon 3 cameras at 60FPS without dropping frames on an i7-9700 CPU, RTX2060 GPU with 32GB of RAM (released 2019).
+
+If you plan to record from multiple camera we highly recommend compressing videos on the GPU rather than CPU, which requires an NVIDIA GPU that supports NVENC video encoding.  Most modern NVIDA GPUs have this functionality but you can check specific models [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new).  If you need to buy a GPU specifically for this application, the RTX A400 is a good option at the time of writing as it is cheap, compact and is powered only via the PCI slot, so can be installed in most standard office desktops.  If you have a compatible GPU then it is recommended to install the latest Studio Driver for your graphics card from the [driver downloads](https://www.nvidia.com/en-us/drivers/) page.
+
+The computer will also need enough USB3 compatible USB ports to connect the cameras.  Due to the high data rates we have not had good results recording through USB hubs.
 
 ## Step-by-step installation guide
 
